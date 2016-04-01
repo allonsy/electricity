@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<style>
+  #textBar {
+    position: fixed;
+    bottom: 10px;
+    width:98%;
+    /*box-sizing: border-box; */
+  }
+</style>
+  <head>
+    <meta charset="UTF-8">
+    <title>IRC Client</title>
+  </head>
+  <body>
+    <h1>Messages</h1><br>
+    <div id="textLines">
+    </div>
+    <input type=text id="textBar" class="bottomBar">
+  </body>
+  <script>
+  var ipc = require('electron').ipcRenderer;
+  document.getElementById('textBar').onkeyup = (function(event) {
+    if(event.keyCode == 13) {
+      var text = document.getElementById('textBar').value + "<br>";
+      document.getElementById('textLines').innerHTML += text;
+      document.getElementById('textBar').value="";
+      ipc.send("enterKeyEvents", text);
+    }
+  });
+  </script>
+</html>

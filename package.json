@@ -1,0 +1,23 @@
+{
+  "name": "electricity",
+  "version": "0.0.1",
+  "description": "An irc client written using electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allonsy/electricity"
+  },
+  "keywords": [
+    "electricity",
+    "irc"
+  ],
+  "author": "allonsy",
+  "license": "MIT",
+  "homepage": "https://github.com/allonsy/electricity",
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.0"
+  }
+}
